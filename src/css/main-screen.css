@@ -66,7 +66,7 @@
     padding:2rem;
     width:33%;
 }
-.content-create .period{
+.content-create .participants{
     border-right:3px solid #1e1e4e;
     border-left:3px solid #1e1e4e;
 }
@@ -112,6 +112,9 @@
 }
 .btnTrash{
     cursor: pointer;
+}
+.calendar{
+   margin:auto;
 }
 
 

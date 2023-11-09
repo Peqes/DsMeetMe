@@ -2,7 +2,8 @@
 import React, { useState, useEffect} from 'react';
 import { BsFillTrashFill } from "react-icons/bs";
 import SideNav from './SideNav';
-import Calendar from 'react-calendar'
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
 
 function MainScreen() {
     const [newPlace,SetNewPlace] = useState("");
@@ -11,7 +12,11 @@ function MainScreen() {
     const [placeList, SetPlaceList] = useState([]);
     const [periodList, SetPeriodList] = useState([]);
     const [participantsList,SetParticipantsList] = useState([]);
+    const [calendarValue, SetCalendarValue] = useState(new Date());
     //Add Place on Enter Click
+    useEffect(()=>{
+        console.log(calendarValue);
+    },[calendarValue])
     useEffect(()=>{
         var input = document.getElementById("addPlaceInput");
         const inputEvent = function(event){
@@ -117,24 +122,6 @@ function MainScreen() {
                         })}
                     </div>
                 </div>
-                <div className="period">
-                    <h2>PERIOD OF RESIDENCE</h2>
-                    <div className='add-form'>
-                        <input type="text" id="addPeriodInput" value={newPeriod} onChange={(e)=>SetNewPeriod(e.target.value)}/>
-                        <button type="button" id="btnAddPeriod" onClick={()=>addPeriod()}>+</button>
-                    </div>
-                    <div className='data-list'>
-                        { periodList.map((item,index) =>{
-                            return(
-                                <div className="data-item" key={index}>
-                                    <p>{item}</p>
-                                    <BsFillTrashFill className="btnTrash" onClick={()=>removePeriod(index)} size="1.5em"/>
-                                </div>
-                            );
-                        })}
-                    </div>
-                   
-                </div>
                 <div className="participants">
                     <h2>PARTICIPANTS</h2>
                     <div className='add-form'>
@@ -152,6 +139,29 @@ function MainScreen() {
                         })}
                     </div>
                 </div>
+                <div className="period">
+                    <h2>PERIOD OF RESIDENCE</h2>
+                    <div className='add-form'>
+                        <input type="text" id="addPeriodInput" value={newPeriod} onChange={(e)=>SetNewPeriod(e.target.value)}/>
+                        <button type="button" id="btnAddPeriod" onClick={()=>addPeriod()}>+</button>
+                    </div>
+                    <div className='data-list'>
+                        { periodList.map((item,index) =>{
+                            return(
+                                <div className="data-item" key={index}>
+                                    <p>{item}</p>
+                                    <BsFillTrashFill className="btnTrash" onClick={()=>removePeriod(index)} size="1.5em"/>
+                                </div>
+                            );
+                        })}
+                    </div>
+                    <div className='calendarContainer'>
+                        <Calendar className={'calendar'} onChange={SetCalendarValue}
+                        selectRange={true} />
+                    </div>
+                   
+                </div>
+                
                 
             </div>
         </div>
