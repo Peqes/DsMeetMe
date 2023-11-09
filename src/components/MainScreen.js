@@ -13,6 +13,7 @@ function MainScreen() {
     const [periodList, SetPeriodList] = useState([]);
     const [participantsList,SetParticipantsList] = useState([]);
     const [calendarValue, SetCalendarValue] = useState(new Date());
+    const [desc,SetDesc] = useState("");
     //Add Place on Enter Click
     useEffect(()=>{
         console.log(calendarValue);
@@ -32,20 +33,6 @@ function MainScreen() {
         };
     },[newPlace])
     //Add Period on Enter Click
-    useEffect(()=>{
-        var input = document.getElementById("addPeriodInput");
-        const inputEvent = function(event){
-            console.log('keypress');
-            if(event.key === "Enter"){
-                event.preventDefault();
-                addPeriod();
-            }
-        }
-        input.addEventListener("keypress", inputEvent)
-        return () => {
-            input.removeEventListener("keypress", inputEvent)
-        };
-    },[newPeriod])
      //Add Participant on Enter Click
      useEffect(()=>{
         var input = document.getElementById("addParticipantInput");
@@ -105,7 +92,7 @@ function MainScreen() {
         <div className="wrapper">
             <SideNav/>
             <div className="content-create">
-                <div className="place">
+                <div className="place grid-row-span-2">
                     <h2>PLACE</h2>
                     <div className='add-form'>
                         <input type="text" id="addPlaceInput" value={newPlace} onChange={(e)=>SetNewPlace(e.target.value)}/>
@@ -122,7 +109,7 @@ function MainScreen() {
                         })}
                     </div>
                 </div>
-                <div className="participants">
+                <div className="participants grid-row-span-2">
                     <h2>PARTICIPANTS</h2>
                     <div className='add-form'>
                         <input type="text" id="addParticipantInput" value={newParticipant} onChange={(e)=>SetNewParticipant(e.target.value)}/>
@@ -139,25 +126,22 @@ function MainScreen() {
                         })}
                     </div>
                 </div>
-                <div className="period">
-                    <h2>PERIOD OF RESIDENCE</h2>
-                    <div className='add-form'>
-                        <input type="text" id="addPeriodInput" value={newPeriod} onChange={(e)=>SetNewPeriod(e.target.value)}/>
-                        <button type="button" id="btnAddPeriod" onClick={()=>addPeriod()}>+</button>
-                    </div>
-                    <div className='data-list'>
-                        { periodList.map((item,index) =>{
-                            return(
-                                <div className="data-item" key={index}>
-                                    <p>{item}</p>
-                                    <BsFillTrashFill className="btnTrash" onClick={()=>removePeriod(index)} size="1.5em"/>
-                                </div>
-                            );
-                        })}
-                    </div>
+                <div className="date">
+                    <h2>DATE</h2>
                     <div className='calendarContainer'>
                         <Calendar className={'calendar'} onChange={SetCalendarValue}
                         selectRange={true} />
+                    </div>
+                   
+                </div>
+                <div className="detailsContainer">
+                    <div className="titleContainer">
+                        <h2>TITLE</h2>
+                        <input type="text" className="titleInput" value={newPlace} onChange={(e)=>SetNewPlace(e.target.value)}/>      
+                    </div>
+                    <div className='descContainer'>
+                        <h2>ADDITIONAL DESCRIPTION</h2>
+                        <textarea className='descArea' name="desc" value={desc} onChange={(e)=>SetDesc(e.target.value)}/>
                     </div>
                    
                 </div>
