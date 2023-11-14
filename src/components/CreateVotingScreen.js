@@ -4,8 +4,9 @@ import { BsFillTrashFill } from "react-icons/bs";
 import SideNav from './SideNav';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
+//Poprawić headery dużych divów, zrobić czytelniejszy kalendarz, wyróżnić elementy partic, places aby nie usunac zlego
 
-function MainScreen() {
+function CreateVotingScreen() {
     const [newPlace,SetNewPlace] = useState("");
     const [newPeriod,SetNewPeriod] = useState("");
     const [newParticipant, SetNewParticipant] = useState("")
@@ -14,6 +15,7 @@ function MainScreen() {
     const [participantsList,SetParticipantsList] = useState([]);
     const [calendarValue, SetCalendarValue] = useState(new Date());
     const [desc,SetDesc] = useState("");
+    const [title,SetTitle] = useState("");
     //Add Place on Enter Click
     useEffect(()=>{
         console.log(calendarValue);
@@ -92,11 +94,13 @@ function MainScreen() {
         <div className="wrapper">
             <SideNav/>
             <div className="content-create">
-                <div className="place grid-row-span-2">
-                    <h2>PLACE</h2>
-                    <div className='add-form'>
-                        <input type="text" id="addPlaceInput" value={newPlace} onChange={(e)=>SetNewPlace(e.target.value)}/>
-                        <button type="button" id="btnAddPlace" onClick={()=>addPlace()}>+</button>
+                <div className="place grid-row-span-6">
+                    <div className='card-header'>
+                        <h2>MEETING PLACE</h2>
+                        <div className='add-form'>
+                            <input type="text" id="addPlaceInput" value={newPlace} onChange={(e)=>SetNewPlace(e.target.value)}/>
+                            <button type="button" id="btnAddPlace" onClick={()=>addPlace()}>+</button>
+                        </div>
                     </div>
                     <div className='data-list'>
                         { placeList.map((item,index) =>{
@@ -109,12 +113,15 @@ function MainScreen() {
                         })}
                     </div>
                 </div>
-                <div className="participants grid-row-span-2">
-                    <h2>PARTICIPANTS</h2>
-                    <div className='add-form'>
-                        <input type="text" id="addParticipantInput" value={newParticipant} onChange={(e)=>SetNewParticipant(e.target.value)}/>
-                        <button type="button" id="btnAddParticipant" onClick={()=>addParticipant()}>+</button>
-                    </div>                 
+                
+                <div className="participants grid-row-span-6">
+                    <div className='card-header'>
+                        <h2>PARTICIPANTS</h2>
+                        <div className='add-form'>
+                            <input type="text" id="addParticipantInput" value={newParticipant} onChange={(e)=>SetNewParticipant(e.target.value)}/>
+                            <button type="button" id="btnAddParticipant" onClick={()=>addParticipant()}>+</button>
+                        </div> 
+                    </div>                
                     <div className='data-list'>
                         { participantsList.map((item,index) =>{
                             return(
@@ -126,30 +133,33 @@ function MainScreen() {
                         })}
                     </div>
                 </div>
-                <div className="date">
-                    <h2>DATE</h2>
+                <div className="detailsContainer grid-row-span-2">
+                    <div className="titleContainer">
+                        <h2>TITLE</h2>
+                        <input type="text" className="titleInput" value={title} onChange={(e)=>SetTitle(e.target.value)}/>      
+                    </div>
+                    <div className='descContainer'>
+                        <textarea className='descArea' name="desc" value={desc} onChange={(e)=>SetDesc(e.target.value)}/>
+                        <h2>ADDITIONAL DESCRIPTION</h2>
+                    </div>
+                   
+                </div>
+                <div className="date grid-row-span-3">   
                     <div className='calendarContainer'>
                         <Calendar className={'calendar'} onChange={SetCalendarValue}
                         selectRange={true} />
                     </div>
+                    <div className='card-header date-header'>
+                        <h2>DATE</h2>
+                    </div>
+                </div>
+                <div className="buttonsContainer">
+                   <button className='crtButton'>Create Voting</button>
                    
                 </div>
-                <div className="detailsContainer">
-                    <div className="titleContainer">
-                        <h2>TITLE</h2>
-                        <input type="text" className="titleInput" value={newPlace} onChange={(e)=>SetNewPlace(e.target.value)}/>      
-                    </div>
-                    <div className='descContainer'>
-                        <h2>ADDITIONAL DESCRIPTION</h2>
-                        <textarea className='descArea' name="desc" value={desc} onChange={(e)=>SetDesc(e.target.value)}/>
-                    </div>
-                   
-                </div>
-                
-                
             </div>
         </div>
     );
   }
   
-  export default MainScreen;
+  export default CreateVotingScreen;

@@ -1,0 +1,87 @@
+
+.content-wrapper{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    margin:1em;
+      /* From https://css.glass */
+      background: rgba(30, 30, 78, 0.23);
+      border-radius: 16px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      overflow:hidden;
+}
+.title-container-vote{
+    text-align: center;
+    display:flex;
+    flex-direction: column;
+    gap:0.5em;
+    padding:1em;
+    background-color: var(--blue);
+}
+.title-container-vote > *{
+    color:white;
+}
+.content-vote{
+    height: 100%;
+    display:grid;
+    grid-template-columns: repeat(5,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+.participants-container-vote, .places-container-vote{
+    position: relative;
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+}
+.map-container-vote{
+    grid-column:span 2;
+}
+.participants-container-vote h2, .places-container-vote h2{
+    padding:0.5em;
+    width:100%;
+    background-color: white;
+    color:var(--blue);
+    text-align: center;
+    border-right: 5px solid var(--blue);
+}
+.participants-vote, .places-vote{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    text-align: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color:var(--blue);
+    
+}
+.participants-vote{
+    border-right:5px solid white;
+}
+
+.participant-vote, .place-vote{
+    padding:0.5em;
+    margin-top:0.5em;
+    color:white;
+    cursor: pointer;
+    overflow-wrap:break-word;
+
+}
+.item-vote-marked{
+    background-color:white;
+    color:var(--blue);
+    border-right: 5px solid var(--blue);
+    border-left: 5px solid var(--blue);
+}
+.participant-vote:hover, .place-vote:hover {
+    background-color:white;
+    color:var(--blue);
+}
+.participant-vote p, .place-vote p{
+    color:inherit;
+}
+.participant-vote:hover > p, .place-vote:hover > p{
+    color:inherit;
+}

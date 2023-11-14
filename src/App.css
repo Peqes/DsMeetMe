@@ -1,3 +1,4 @@
+
 .App {
   text-align: center;
 }
@@ -37,6 +38,28 @@
   }
 }
 
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color:#050c2b;
+}
+
+.wrapper{
+  min-width:100vw;
+  min-height:100vh;
+  max-width:100vw;
+  max-height:100vh;
+  display:flex;
+  background-image:url(assets/background-pattern.webp);
+}
+
 .grid-row-span-2{
   grid-row:span 2;
+}
+.grid-row-span-3{
+  grid-row:span 3;
+}
+.grid-row-span-6{
+  grid-row:span 6;
 }

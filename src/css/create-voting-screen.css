@@ -1,0 +1,160 @@
+/*CONTENT*/
+.content-create{
+    padding:1rem;
+    margin-inline:auto;
+    width:90%;
+    display:grid;
+    gap:1rem;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(6,1fr);
+}
+
+.content-create > *{
+    /* From https://css.glass */
+    background: rgba(30, 30, 78, 0.23);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    overflow:hidden;
+}
+.content-create h2 {
+    color:white;
+}
+
+.content-create input{
+    font-size:24px;
+    border-radius: 8px;
+    padding:3px;
+    width:90%;
+    opacity:90%;
+}
+.card-header{
+    background-color: var(--blue);
+    padding:1rem 2rem 2rem 2rem;
+    border-top-left-radius:16px;
+    border-top-right-radius:16px;
+}
+.add-form{
+    margin-top:0.5em;
+    display:flex;
+    position: relative;
+    width:100%;
+    margin-top:2rem;
+}
+.add-form button{
+    cursor: pointer;
+    font-size:24px;
+    width:42px;
+    margin-left:4px;
+    border-radius: 5px;
+    background-color:white;
+    color:#1e1e4e;
+}
+.data-list{
+    margin-top:1em;
+    width:100%;
+    display:flex;
+    flex-direction: column;
+    gap:1em;
+    padding-left:2em;
+}
+.data-item{
+    display:flex;
+}
+.data-item p{
+    width:90%;
+    font-size: 22px;
+}
+.btnTrash{
+    cursor: pointer;
+}
+.date{
+    display:flex;
+}
+.date-header{
+    border-radius: 16px;
+    margin:0.5em 0.5em 0.5em 0;
+    padding:1rem;
+}
+.calendarContainer{
+    flex:1;
+    padding:0.5rem;
+}
+.calendar{
+   width:100% !important;
+   height:100% !important;
+   border-radius:16px;
+   opacity:80%;
+}
+.detailsContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    gap:1em;
+}
+.detailsContainer h2{
+    background-color: var(--blue);
+    padding:0.5rem 1.5rem 0.5rem 1.5rem;
+    font-size: 18px;
+    text-align: center;
+    width:40%;
+}
+.titleContainer{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:0.5em;
+}
+.titleContainer h2{
+    border-bottom-right-radius:16px;
+}
+.titleContainer input{
+    text-align: center;
+    margin:auto;
+    width:90%;
+    opacity:60%;
+}
+.descContainer{
+    flex:1;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap:0.5em;
+}
+.descContainer h2{
+    align-self: flex-end;
+    width:60%;
+    border-top-left-radius:16px;
+}
+.descArea{
+    resize:none;
+    height: 100%;
+    width:90%;
+    padding:0.5em;
+    font-size: 18px;
+    border-radius: 8px;
+    opacity:60%;
+}
+.buttonsContainer{
+    padding:1em;
+}
+.crtButton{
+    padding:0.5em;
+    font-size:18px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

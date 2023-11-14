@@ -1,0 +1,48 @@
+.side-nav{
+    padding-top:20px;
+    width:10%;
+    min-height: 80vh;
+    display:flex;
+    background-color:var(--blue) ;
+    flex-direction: column;
+    -webkit-box-shadow: 12px -2px 29px -12px rgba(23, 50, 130, 1);
+    -moz-box-shadow: 12px -2px 29px -12px rgba(23, 50, 130, 1);
+    box-shadow: 12px -2px 29px -12px rgba(23, 50, 130, 1);
+    
+}
+.side-nav h2{
+    margin-top:10px;
+    color:white;
+    text-align: center;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+}
+/*NAVIGATION BAR*/
+.section{
+    width:100%;
+    margin-top:10px;
+    height: 7%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius:15px;
+    border-bottom-right-radius:15px;
+    background-color: white;
+    transform:translateX(-10%);
+    transition:all 0.5s;  
+    cursor: pointer;
+}
+.section:hover{
+    transform: translateX(0%);
+}
+
+.section p{
+    font-size:22px;
+    font-weight: bold;
+    color:var(--blue);
+    text-align: center;
+}
+.section .small-text{
+    width:80%;
+    font-size:18px;
+}
