@@ -4,17 +4,17 @@ const SideNav = () => {
         <div className="side-nav">
                 <h2>MEETINGS</h2>
                 <div className="section">
-                    <p className='small-text'>CREATE VOTING</p>
+                    <p className='small-text'>MANAGER</p>
                 </div>
                 <div className="section">
-                    <p >VOTE</p>
+                    <p>PARTICIPATE</p>
                 </div>
-                <h2>RECEIPES</h2>
+                <h2>VOTINGS</h2>
                 <div className="section">
-                    <p>ADD</p>
+                    <p>MANAGER</p>
                 </div>
                 <div className="section">
-                    <p className='small-text'>AVAILABLE RECEIPES</p>
+                    <p className='small-text'>VOTE</p>
                 </div>
                 
         </div>

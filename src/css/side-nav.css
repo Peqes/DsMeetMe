@@ -1,5 +1,4 @@
 .side-nav{
-    padding-top:20px;
     width:10%;
     min-height: 80vh;
     display:flex;
@@ -11,23 +10,25 @@
     
 }
 .side-nav h2{
-    margin-top:10px;
     color:white;
     text-align: center;
-    border-bottom: 1px solid white;
-    border-top: 1px solid white;
+    background-color: var(--darkblue);
+    padding:10px 0;
+}
+.side-nav h2:not(:first-child){
+    margin-top:10px;
 }
 /*NAVIGATION BAR*/
 .section{
     width:100%;
     margin-top:10px;
-    height: 7%;
+    height: 8%;
     display:flex;
     align-items: center;
     justify-content: center;
     border-top-right-radius:15px;
     border-bottom-right-radius:15px;
-    background-color: white;
+    background-color: var(--brightblue);
     transform:translateX(-10%);
     transition:all 0.5s;  
     cursor: pointer;
@@ -37,12 +38,12 @@
 }
 
 .section p{
-    font-size:22px;
+    font-size:20px;
     font-weight: bold;
-    color:var(--blue);
+    color:white;
     text-align: center;
 }
 .section .small-text{
     width:80%;
-    font-size:18px;
+    font-size:20px;
 }

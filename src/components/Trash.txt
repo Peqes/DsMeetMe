@@ -1,0 +1,52 @@
+ {/* <div className="participants grid-row-span-6">
+                        <div className='card-header'>
+                            <h2>PARTICIPANTS</h2>
+                            <div className='add-form'>
+                                <input type="text" id="addParticipantInput" value={newParticipant} onChange={(e)=>SetNewParticipant(e.target.value)}/>
+                                <button type="button" id="btnAddParticipant" onClick={()=>addParticipant()}>+</button>
+                            </div> 
+                        </div>                
+                        <div className='data-list'>
+                            { participantsList.map((item,index) =>{
+                                return(
+                                    <div className="data-item" key={index}>
+                                        <p>{item}</p>
+                                        <BsFillTrashFill className="btnTrash" onClick={()=>removeParticipant(index)} size="1.5em"/>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                        
+                    </div>
+                    */}
+
+
+                            //Add Participant on Enter Click
+   /*  useEffect(()=>{
+        var input = document.getElementById("addParticipantInput");
+        const inputEvent = function(event){
+            console.log('keypress');
+            if(event.key === "Enter"){
+                event.preventDefault();
+                addParticipant();
+            }
+        }
+        input.addEventListener("keypress", inputEvent)
+        return () => {
+            input.removeEventListener("keypress", inputEvent)
+        };
+    },[newParticipant])
+*/
+    //Add Participant
+   /* const addParticipant = () => {
+        if(newParticipant){
+            SetParticipantsList(participantsList => [...participantsList, newParticipant])
+            SetNewParticipant("");
+        }    
+    }
+    //Remove Participant
+    const removeParticipant = (index) =>{
+        var participantToRemove = participantsList[index];
+        SetParticipantsList((participantsList) => 
+            participantsList.filter((participant) => participant !== participantToRemove));
+    }*/

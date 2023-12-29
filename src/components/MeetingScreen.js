@@ -1,14 +1,14 @@
 
 import React, { useState, useEffect} from 'react';
 import { BsFillTrashFill } from "react-icons/bs";
-import SideNav from './SideNav';
+import SideNav from './SideNav.js';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import MapSection from './Map.js'
 //przerwa miedzy vote-ami ciemniejszy niebieski zamiast białego
 //dodać pogodę do dat
 //mapka
-function VotingScreen() {
+function MeetingScreen() {
   
     const [participantList,SetParticipantsList] = useState(["Piotr Górski","Paweł Gaiński","Grzegorz Brzęczyszczykiewicz","Jan Kowalski","Piotr Górski","Paweł Gaiński","Grzegorz Brzęczyszczykiewicz","Jan Kowalski","Piotr Górski","Paweł Gaiński","Grzegorz Brzęczyszczykiewicz","Jan Kowalski","Piotr Górski","Paweł Gaiński","Grzegorz Brzęczyszczykiewicz","Jan Kowalski","Piotr Górski","Paweł Gaiński","Grzegorz Brzęczyszczykiewicz","Jan Kowalski",]);
     const [placeList, SetPlacesList] = useState(["place1", "Wielki wodospat niagara wyprawa w dzicz elo elo", "place2","place3","place1", "placeplaceplace", "place2","place3","place1", "placeplaceplace", "place2","place3",])
@@ -111,4 +111,4 @@ function VotingScreen() {
     );
   }
   
-  export default VotingScreen;
+  export default MeetingScreen;
